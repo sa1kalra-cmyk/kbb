@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action https://kite.zerodha.com; base-uri 'none'"
+    />
+    <meta name="robots" content="noindex" />
+    <title>Kite basket · Kite Basket Bot</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <link rel="stylesheet" href="assets/app.css" />
+    <script type="module" src="assets/basket.js"></script>
+  </head>
+  <body>
+    <main class="card">
+      <h1>Kite basket</h1>
+      <p id="meta" class="hint" hidden></p>
+      <ul id="errors" class="status" data-tone="error" hidden></ul>
+      <p id="dry-run" class="banner" data-tone="info" hidden>DRY RUN — nothing will be submitted</p>
+      <p id="date-warning" class="banner" data-tone="error" hidden></p>
+      <p id="market-warning" class="banner" data-tone="warn" hidden></p>
+
+      <table id="orders" hidden>
+        <thead>
+          <tr>
+            <th scope="col">Symbol</th>
+            <th scope="col" class="num">Qty</th>
+            <th scope="col" class="num">Limit</th>
+            <th scope="col" class="num">Value</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+        <tfoot>
+          <tr>
+            <th scope="row" colspan="3">Total</th>
+            <td id="total" class="num"></td>
+          </tr>
+        </tfoot>
+      </table>
+      <p id="note" class="hint" hidden></p>
+
+      <button id="submit" class="button primary" type="button" hidden>Open in Kite</button>
+      <p id="submit-hint" class="hint center" hidden>Kite shows the basket; review it and tap Execute there.</p>
+
+      <noscript><p class="status" data-tone="error">This page needs JavaScript.</p></noscript>
+    </main>
+  </body>
+</html>

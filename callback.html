@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src http://127.0.0.1:*; form-action 'none'; base-uri 'none'"
+    />
+    <meta name="robots" content="noindex" />
+    <title>Kite login · Kite Basket Bot</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+    <link rel="stylesheet" href="assets/app.css" />
+    <script type="module" src="assets/callback.js"></script>
+  </head>
+  <body>
+    <main class="card">
+      <h1>Kite login</h1>
+      <p id="status" class="status" role="status" data-tone="working">Checking…</p>
+
+      <section id="telegram" hidden>
+        <p id="telegram-hint" class="hint">Opens Telegram and hands the login to your bot.</p>
+        <a id="telegram-link" class="button primary" href="https://t.me/" rel="noreferrer">Send to bot</a>
+      </section>
+
+      <section id="manual" hidden>
+        <p class="hint">Or send this message to <span id="manual-bot">your bot</span>:</p>
+        <code id="manual-command" class="command"></code>
+        <button id="copy" class="button" type="button">Copy</button>
+      </section>
+
+      <noscript><p class="status" data-tone="error">This page needs JavaScript.</p></noscript>
+    </main>
+  </body>
+</html>
