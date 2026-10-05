@@ -171,7 +171,7 @@ export function limitNote(payload) {
     typeof payload.limit_buffer_pct === "number"
       ? `${Number(payload.limit_buffer_pct.toFixed(2))}%`
       : "a little";
-  return `Prices are limits ≈${pct} above LTP at 15:10. Orders may stay unfilled if the price moves more.`;
+  return `Prices are limits ≈${pct} above the LTP at plan time. Orders may stay unfilled if the price moves more.`;
 }
 
 /** The two form fields Kite Publisher expects (spec §2.4). @param {BasketPayload} payload */
