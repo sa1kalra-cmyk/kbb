@@ -8,7 +8,8 @@
 export const KITE_BASKET_URL = "https://kite.zerodha.com/connect/basket";
 export const MAX_ITEMS = 10;
 const COMPRESSED_PREFIX = "z.";
-const TAG_RE = /^[A-Za-z0-9]{1,20}$/;
+// Kite's basket rejects longer tags: "`tag` should be max 8 characters" (2026-10-07).
+const TAG_RE = /^[A-Za-z0-9]{1,8}$/;
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const IST_OFFSET_MS = 330 * 60_000;
